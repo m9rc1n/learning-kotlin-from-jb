@@ -14,9 +14,5 @@ fun todoTask2(): Nothing = TODO(
     references = { collection: Collection<Int> -> task1(collection); collection.joinToString() })
 
 fun task2(collection: Collection<Int>): String {
-    val sb = StringBuilder()
-    sb.append("{")
-    sb.append(collection.joinToString())
-    sb.append("}")
-    return sb.toString()
+    return collection.joinToString (prefix = "{", postfix = "}")
 }
