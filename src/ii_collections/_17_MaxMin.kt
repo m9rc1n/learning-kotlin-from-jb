@@ -5,12 +5,12 @@ fun example4() {
     val longestString = listOf("a", "b").maxBy { it.length }
 }
 
+// Return a customer whose order count is the highest among all customers
 fun Shop.getCustomerWithMaximumNumberOfOrders(): Customer? {
-    // Return a customer whose order count is the highest among all customers
-    todoCollectionTask()
+    return this.customers.maxBy { it.orders.size }
 }
 
+// Return the most expensive product which has been ordered
 fun Customer.getMostExpensiveOrderedProduct(): Product? {
-    // Return the most expensive product which has been ordered
-    todoCollectionTask()
+    return this.orderedProducts.maxBy { it.price }
 }
