@@ -8,7 +8,7 @@ fun example9() {
 // The same as
 fun whatFoldDoes(): Int {
     var product = 1
-    listOf(1, 2, 3, 4).forEach { element -> product = element * product}
+    listOf(1, 2, 3, 4).forEach { element -> product *= element }
     return product
 }
 
@@ -16,6 +16,6 @@ fun Shop.getProductsOrderedByAllCustomers(): Set<Product> {
     // Return the set of products ordered by every customer
     return customers.fold(allOrderedProducts, {
         orderedByAll, customer ->
-        todoCollectionTask()
+        orderedByAll.intersect(customer.orderedProducts)
     })
 }
